@@ -31,5 +31,42 @@ class Category extends Model
         self::$categoroy->save();
 
     }
+    public static function updateCategory($request,$id)
+    {
+        self::$categoroy = Category::find($id);
+        if ($request->file('image'))
+        {
+            if(file_exists(self::$categoroy->image))
+            {
+                unlink(self::$categoroy->image);
+
+            }
+            self::$imageUrl = self::getImageUrl($request);
+
+        }
+        else
+        {
+            self::$imageUrl = self::$categoroy->image;
+        }
+        self::$categoroy->name        = $request->name;
+        self::$categoroy->description = $request->description;
+        self::$categoroy->image       =  self::$imageUrl;
+        self::$categoroy->status        =$request->status;
+        self::$categoroy->save();
+
+
+    }
+    public static function deleteCategory($id)
+    {
+        self::$categoroy = Category::find($id);
+
+            if(file_exists(self::$categoroy->image))
+            {
+                unlink(self::$categoroy->image);
+
+            }
+            self::$categoroy->delete();
+        }
+
 
 }

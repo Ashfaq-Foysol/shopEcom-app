@@ -9,6 +9,7 @@
             <h4 class="card-title">Data Table</h4>
             <h6 class="card-subtitle">Data table example</h6>
             <div class="table-responsive m-t-40">
+                <p class="text-center text-success">{{Session::get('message')}} </p>
                 <table id="myTable" class="table table-striped border">
                     <thead>
                         <tr>
@@ -31,10 +32,10 @@
                             <td><img src="{{asset($category->image)}}" alt="{{$category->name}}" height="50" width="80"> </td>
                             <td>{{$category->status== 1? 'published' : 'Unpublished'}}</td>
                             <td>
-                             <a href="" class="btn btn-success btn-sm">
+                             <a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-success btn-sm">
                                 <i class="ti-agenda"></i>
                              </a>
-                             <a href="" class="btn btn-danger btn-sm">
+                             <a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete');">
                                 <i class="ti-trash"></i>
                              </a>
                             </td>
