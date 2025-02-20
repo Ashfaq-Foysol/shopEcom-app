@@ -14,31 +14,28 @@
                     <thead>
                         <tr>
                             <th>SL No</th>
-                            <th>Category Name</th>
-                            <th>Sub Category Name</th>
-
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th> Status</th>
+                            <th>Brand Name</th>
+                            <th>Brand Description</th>
+                            <th>Brand Image</th>
+                            <th>Publication Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sub_categories as $sub_category )
+                        @foreach ($brands as $brand)
 
 
                         <tr>
                             <td>{{$loop->iteration}} </td>
-                            <td>{{$sub_category->category->name}} </td>
-                            <td>{{$sub_category->name}} </td>
-                            <td>{{$sub_category->description}}</td>
-                            <td><img src="{{asset($sub_category->image)}}" alt="{{$sub_category->name}}" height="50" width="80"> </td>
-                            <td>{{$sub_category->status== 1? 'published' : 'Unpublished'}}</td>
+                            <td>{{$brand->name}} </td>
+                            <td>{{$brand->description}}</td>
+                            <td><img src="{{asset($brand->image)}}" alt="{{$brand->name}}" height="50" width="80"> </td>
+                            <td>{{$brand->status== 1? 'published' : 'Unpublished'}}</td>
                             <td>
-                             <a href="{{route('sub-category.edit',['id'=>$sub_category->id])}}" class="btn btn-success btn-sm">
+                             <a href="{{route('brand.edit',['id'=>$brand->id])}}" class="btn btn-success btn-sm">
                                 <i class="ti-agenda"></i>
                              </a>
-                             <a href="{{route('sub-category.delete',['id'=>$sub_category->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete');">
+                             <a href="{{route('brand.delete',['id'=>$brand->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete');">
                                 <i class="ti-trash"></i>
                              </a>
                             </td>

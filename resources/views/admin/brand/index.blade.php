@@ -8,10 +8,10 @@
                 <h4 class="card-title">Sample Horizontal Form with Icons</h4>
                 <h6 class="card-subtitle">Use Bootstrap's predefined grid classes for horizontal form</h6>
                 <h4 class="text-center text-success">{{session('message')}} </h4>
-                <form class="form-horizontal p-t-20" action="{{route('category.new')}}" method="POST" enctype="multipart/form-data" >
+                <form class="form-horizontal p-t-20" action="{{route('brand.new')}}" method="POST" enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group row">
-                        <label for="exampleInputuname3" class="col-sm-3 control-label">Add Category</label>
+                        <label for="exampleInputuname3" class="col-sm-3 control-label">Add Product</label>
                         {{-- <div class="col-sm-9">
                             <div class="input-group">
                                 <span class="input-group-text"><i class="ti-user"></i></span>
@@ -20,10 +20,10 @@
                         </div> --}}
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Category Name<span class="text-danger">*</span></label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Brand Name<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="name" id="exampleInputEmail3" placeholder="Category Name">
+                                <input type="text" class="form-control" name="name" id="exampleInputEmail3" placeholder="Brand Name">
                             </div>
                         </div>
                     </div>

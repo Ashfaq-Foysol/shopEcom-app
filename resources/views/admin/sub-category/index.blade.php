@@ -13,28 +13,30 @@
                     <div class="form-group row">
                         <label for="" class="col-sm-3 control-label">Category Name</label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="category_id">
-                                <option value="" disabled selected>--select Category--</option>
-                                @foreach ($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}} </option>
-                                @endforeach
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 control-label"> Sub Category Name<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
+                        <select class="form-control" name="category_id" id="">
+                            <option value="" disabled selected >--Select Category</option>
+                            @foreach ($categories as $category )
+                                <option value="{{$category->id}}" >{{$category->name}} </option>
+                            @endforeach
+                        </select>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="name" id="" placeholder="Sub Category Name">
+                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="form-label col-sm-3 control-label" for="">Sub Category Description<span class="text-danger">*</span></label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Sub Category Name<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <textarea  class="form-control" name="description" placeholder="Sub Category Description"></textarea>
+                                <input type="text" class="form-control" name="name" id="exampleInputEmail3" placeholder="Category Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-3 control-label" for="web">Sub Category Description<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <textarea  class="form-control" name="description" placeholder="Category Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,7 @@
                     </div> --}}
                     <div class="form-group row m-b-0">
                         <div class="offset-sm-3 col-sm-9">
-                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create New Sub-Category</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create New Category</button>
                         </div>
                     </div>
                 </form>

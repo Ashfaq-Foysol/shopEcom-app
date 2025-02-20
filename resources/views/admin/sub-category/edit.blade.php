@@ -8,39 +8,45 @@
                 <h4 class="card-title">Sample Horizontal Form with Icons</h4>
                 <h6 class="card-subtitle">Use Bootstrap's predefined grid classes for horizontal form</h6>
                 <h4 class="text-center text-success">{{session('message')}} </h4>
-                <form class="form-horizontal p-t-20" action="{{route('category.update',['id' => $category->id])}}" method="POST" enctype="multipart/form-data" >
+                <form class="form-horizontal p-t-20" action="{{ route('sub-category.update', ['id' => $sub_category -> id]) }}" method="POST" enctype="multipart/form-data" >
                     @csrf
+
                     <div class="form-group row">
-                        <label for="exampleInputuname3" class="col-sm-3 control-label">Add Product</label>
-                        {{-- <div class="col-sm-9">
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="ti-user"></i></span>
-                                <input type="text" class="form-control" id="exampleInputuname3" placeholder="Username">
-                            </div>
-                        </div> --}}
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Category Name<span class="text-danger">*</span></label>
+                        <label for="" class="col-sm-3 control-label">Category Name</label>
                         <div class="col-sm-9">
+                        <select class="form-control" name="category_id" id="">
+                            <option value="" disabled selected >--Select Category</option>
+                            @foreach ($categories as $category )
+                                <option value="{{$category->id}}" {{$category->id == $sub_category-> category_id ? 'selected':''}}>{{$category->name}} </option>
+                            @endforeach
+                        </select>
                             <div class="input-group">
-                                <input type="text" class="form-control" value="{{$category->name}}" name="name" id="exampleInputEmail3" placeholder="Category Name">
+                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="form-label col-sm-3 control-label" for="web">Category Description<span class="text-danger">*</span></label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Sub Category Name<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <textarea  class="form-control" name="description" placeholder="Category Description">{{$category->description}}</textarea>
+                                <input type="text" class="form-control" name="name" value="{{$sub_category->name}}" id="exampleInputEmail3" placeholder="Sub Category Name">
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword4" class="col-sm-3 control-label">Category Image</label>
+                        <label class="form-label col-sm-3 control-label" for="web">Sub Category Description<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <textarea  class="form-control" name="description" placeholder="Category Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword4" class="col-sm-3 control-label">Sub Category Image</label>
                         <div class="col-sm-9">
                             <div class="input-group">
                                 <input type="file" name="image" class="form-control" id="exampleInputpwd4" placeholder="Enter pwd">
-                                <img src="{{asset($category->image)}}" alt="" height="100" width="130"/>
+                                <img src ="{{asset($sub_category->image)}}" alt="" height="100" width="130">
                             </div>
                         </div>
                     </div>
@@ -49,8 +55,8 @@
                         <div class="col-sm-9">
                             <div class="input-group">
 
-                                <level class="me-3"> <input type="radio" name="status" {{$category->status == 1? 'checked' : ''}} value="1" checked> Published </level>
-                                <level> <input type="radio" name="status" {{$category->status == 2? 'checked' : ''}} value="2"> Un-Published </level>
+                                <level class="me-3"> <input type="radio" {{$sub_category->status == 1? 'checked' : '' }} name="status" value="1" checked> Published </level>
+                                <level> <input type="radio" name="status"{{$sub_category->status == 2? 'checked' : '' }}  value="2"> Un-Published </level>
 
                                 </div>
                         </div>
@@ -65,7 +71,7 @@
                     </div> --}}
                     <div class="form-group row m-b-0">
                         <div class="offset-sm-3 col-sm-9">
-                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Update Category info</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Update sub Category</button>
                         </div>
                     </div>
                 </form>

@@ -14,31 +14,29 @@
                     <thead>
                         <tr>
                             <th>SL No</th>
-                            <th>Category Name</th>
-                            <th>Sub Category Name</th>
-
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th> Status</th>
+                            <th>Unit Name</th>
+                            <th>Unit Code</th>
+                            <th>Unit Description</th>
+                            <th>Publication Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sub_categories as $sub_category )
+                        @foreach ($units as $unit )
 
 
                         <tr>
                             <td>{{$loop->iteration}} </td>
-                            <td>{{$sub_category->category->name}} </td>
-                            <td>{{$sub_category->name}} </td>
-                            <td>{{$sub_category->description}}</td>
-                            <td><img src="{{asset($sub_category->image)}}" alt="{{$sub_category->name}}" height="50" width="80"> </td>
-                            <td>{{$sub_category->status== 1? 'published' : 'Unpublished'}}</td>
+                            <td>{{$unit->name}} </td>
+                            <td>{{$unit->code}} </td>
+
+                            <td>{{$unit->description}}</td>
+                            <td>{{$unit->status== 1? 'published' : 'Unpublished'}}</td>
                             <td>
-                             <a href="{{route('sub-category.edit',['id'=>$sub_category->id])}}" class="btn btn-success btn-sm">
+                             <a href="{{route('unit.edit',['id'=>$unit->id])}}" class="btn btn-success btn-sm">
                                 <i class="ti-agenda"></i>
                              </a>
-                             <a href="{{route('sub-category.delete',['id'=>$sub_category->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete');">
+                             <a href="{{route('unit.delete',['id'=>$unit->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete');">
                                 <i class="ti-trash"></i>
                              </a>
                             </td>
