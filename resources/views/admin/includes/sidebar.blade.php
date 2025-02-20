@@ -17,8 +17,8 @@
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Sub Category</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-email.html">Add Sub Category</a></li>
-                        <li><a href="app-email-detail.html">Manage Sub Category</a></li>
+                        <li><a href="{{route('sub-category.add')}}">Add Sub Category</a></li>
+                        <li><a href="{{route('sub-category.manage')}}">Manage Sub Category</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-palette"></i><span class="hide-menu">Brand Module</span></a>
