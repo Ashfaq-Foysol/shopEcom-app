@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyCommerceController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 
 
@@ -50,4 +51,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     Route::get('/unit/edit/{id}', [UnitController::class, 'edit'])->name('unit.edit');
     Route::post('/unit/update/{id}', [UnitController::class, 'update'])->name('unit.update');
     Route::get('/unit/delete/{id}', [UnitController::class, 'delete'])->name('unit.delete');
+
+    // product controller
+    Route::get('/product/add', [ProductController::class, 'index'])->name('product.add');
+    Route::post('/product/new', [ProductController::class, 'create'])->name('product.new');
+    Route::get('/product/manage', [ProductController::class, 'manage'])->name('product.manage');
+    Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
 });

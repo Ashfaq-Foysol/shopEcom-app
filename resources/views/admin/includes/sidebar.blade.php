@@ -37,8 +37,8 @@
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-media-right-alt"></i><span class="hide-menu">Product</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="form-basic.html">Add Product</a></li>
-                        <li><a href="form-layout.html">Manage Product</a></li>
+                        <li><a href="{{route('product.add')}}">Add Product</a></li>
+                        <li><a href="{{route('product.manage')}}">Manage Product</a></li>
 
                     </ul>
                 </li>
