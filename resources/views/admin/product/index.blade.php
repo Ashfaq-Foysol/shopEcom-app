@@ -25,126 +25,26 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-3 control-label">Sub-Category Name</label>
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">product Name<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                        <select class="form-control" name="sub_category_id" id="">
-                            <option value="" disabled selected >--Select Sub-Category</option>
-                            @foreach ($sub_categories as $sub_category )
-                                <option value="{{$sub_category->id}}" >{{$sub_category->name}} </option>
-                            @endforeach
-                        </select>
                             <div class="input-group">
-                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
+                                <input type="text" class="form-control" name="name" id="exampleInputEmail3" placeholder="product Name">
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-3 control-label">Brand Name</label>
+                        <label class="form-label col-sm-3 control-label" for="web">product Description<span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                        <select class="form-control" name="brand_id" id="">
-                            <option value="" disabled selected >--Select Brand Category</option>
-                            @foreach ($brands as $brand )
-                                <option value="{{$brand->id}}" >{{$brand->name}} </option>
-                            @endforeach
-                        </select>
                             <div class="input-group">
-                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
+                                <textarea  class="form-control" name="description" placeholder="product Description"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="" class="col-sm-3 control-label">Unit Name</label>
-                        <div class="col-sm-9">
-                        <select class="form-control" name="unit_id" id="">
-                            <option value="" disabled selected >--Select Unit</option>
-                            @foreach ($units as $unit )
-                                <option value="{{$unit->id}}" >{{$unit->name}} </option>
-                            @endforeach
-                        </select>
-                            <div class="input-group">
-                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Product Name<span class="text-danger">*</span></label>
+                        <label for="inputPassword4" class="col-sm-3 control-label">product Image</label>
                         <div class="col-sm-9">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="name" id="exampleInputEmail3" placeholder="Product Name">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Product Code<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="code" id="exampleInputEmail3" placeholder="Product code">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Product Model<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="model" id="exampleInputEmail3" placeholder="Product Model">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Product Stock Amount<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="stock_amount" id="exampleInputEmail3" placeholder="Stock">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Regular Price<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="number" class="form-control" name="regular_price" id="exampleInputEmail3" placeholder="Regular Price">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">selling Price<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="number" class="form-control" name="selling_price" id="exampleInputEmail3" placeholder="Offer Price">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Short Description<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="textarea" class="form-control" name="short_description" id="exampleInputEmail3" placeholder="Short Description">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInputEmail3" class="col-sm-3 control-label">Long Description<span class="text-danger">*</span></label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="textarea" class="form-control" name="long_description" id="exampleInputEmail3" placeholder="Long Description">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="inputPassword4" class="col-sm-3 control-label">Featured Image</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="file" name="image" class="form-control" id="exampleInputpwd4" accept="image/*" placeholder="Featured Image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword4" class="col-sm-3 control-label">Other Image</label>
-                        <div class="col-sm-9">
-                            <div class="input-group">
-                                <input type="file" name="other_image" class="form-control" multiple id="exampleInputpwd4" placeholder="Other Image">
+                                <input type="file" name="image" class="form-control" id="exampleInputpwd4" placeholder="Enter pwd">
                             </div>
                         </div>
                     </div>
@@ -159,10 +59,17 @@
                                 </div>
                         </div>
                     </div>
-
+                    {{-- <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <label class="form-check m-b-0">
+                                <input type="checkbox" class="form-check-input">
+                                <span class="form-check-label">Check me out !</span>
+                            </label>
+                        </div>
+                    </div> --}}
                     <div class="form-group row m-b-0">
                         <div class="offset-sm-3 col-sm-9">
-                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create New Product</button>
+                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create New product</button>
                         </div>
                     </div>
                 </form>

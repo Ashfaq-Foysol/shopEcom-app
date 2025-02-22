@@ -1,0 +1,84 @@
+@extends('admin.master')
+@section('body')
+<div class="row mt-9">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sample Horizontal Form with Icons</h4>
+                <h6 class="card-subtitle">Use Bootstrap's predefined grid classes for horizontal form</h6>
+                <h4 class="text-center text-success">{{session('message')}} </h4>
+                <form class="form-horizontal p-t-20" action="{{ route('product.update', ['id' => $product -> id]) }}" method="POST" enctype="multipart/form-data" >
+                    @csrf
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 control-label">Category Name</label>
+                        <div class="col-sm-9">
+                        <select class="form-control" name="category_id" id="">
+                            <option value="" disabled selected >--Select Category</option>
+                            @foreach ($categories as $category )
+                                <option value="{{$category->id}}" {{$category->id == $product-> category_id ? 'selected':''}}>{{$category->name}} </option>
+                            @endforeach
+                        </select>
+                            <div class="input-group">
+                                {{-- <input type="text" class="form-control" name="category_name" id="" placeholder="Category Name"> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail3" class="col-sm-3 control-label">product Name<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="name" value="{{$product->name}}" id="exampleInputEmail3" placeholder="product Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-3 control-label" for="web">product Description<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <textarea  class="form-control" name="description" placeholder="product Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword4" class="col-sm-3 control-label">product Image</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="file" name="image" class="form-control" id="exampleInputpwd4" placeholder="Enter pwd">
+                                <img src ="{{asset($product->image)}}" alt="" height="100" width="130">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword5" class="col-sm-3 control-label">Publication Status</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+
+                                <level class="me-3"> <input type="radio" {{$product->status == 1? 'checked' : '' }} name="status" value="1" checked> Published </level>
+                                <level> <input type="radio" name="status"{{$product->status == 2? 'checked' : '' }}  value="2"> Un-Published </level>
+
+                                </div>
+                        </div>
+                    </div>
+                    {{-- <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <label class="form-check m-b-0">
+                                <input type="checkbox" class="form-check-input">
+                                <span class="form-check-label">Check me out !</span>
+                            </label>
+                        </div>
+                    </div> --}}
+                    <div class="form-group row m-b-0">
+                        <div class="offset-sm-3 col-sm-9">
+                            <button type="submit" class="btn btn-success waves-effect waves-light text-white">Update product</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+
