@@ -42,6 +42,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="form-label col-sm-3 control-label" for="web">selling_price<span class="text-danger">*</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <textarea  class="form-control" name="selling_price" placeholder="selling_price"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="inputPassword4" class="col-sm-3 control-label">product Image</label>
                         <div class="col-sm-9">
                             <div class="input-group">

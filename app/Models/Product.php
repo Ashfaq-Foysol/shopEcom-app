@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
 
     private static $product, $image, $imageName, $directory, $imageUrl;
-    protected $fillable = ['name','description','image','status'];
+    protected $fillable = ['name','description','selling_price','image','status'];
     public static function getImageUrl($request)
     {
        self::$image = $request->file('image');
@@ -28,6 +28,7 @@ class Product extends Model
        self::$product->category_id = $request->category_id;
        self::$product->name        = $request->name;
        self::$product->description = $request->description;
+       self::$product->selling_price = $request->selling_price;
        self::$product->image       = self::getImageUrl($request);
        self::$product->status        =$request->status;
        self::$product->save();
@@ -53,6 +54,8 @@ class Product extends Model
        self::$product->category_id = $request->category_id;
        self::$product->name        = $request->name;
        self::$product->description = $request->description;
+       self::$product->selling_price = $request->selling_price;
+
        self::$product->image       =  self::$imageUrl;
        self::$product->status        =$request->status;
        self::$product->save();

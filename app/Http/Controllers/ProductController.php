@@ -14,6 +14,7 @@ class ProductController extends Controller
 {
     public function index(){
         return view('admin.product.index',['categories'=>Category::all()]);
+
     }
 
     public function create(Request $request)

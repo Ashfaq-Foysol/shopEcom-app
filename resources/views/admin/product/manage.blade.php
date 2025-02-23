@@ -18,6 +18,7 @@
                             <th>product Name</th>
 
                             <th>Description</th>
+                            <th> Selling price</th>
                             <th>Image</th>
                             <th> Status</th>
                             <th>Action</th>
@@ -32,6 +33,8 @@
                             <td>{{$product->category->name}} </td>
                             <td>{{$product->name}} </td>
                             <td>{{$product->description}}</td>
+                            <td>{{$product->selling_price}}</td>
+
                             <td><img src="{{asset($product->image)}}" alt="{{$product->name}}" height="50" width="80"> </td>
                             <td>{{$product->status== 1? 'published' : 'Unpublished'}}</td>
                             <td>
